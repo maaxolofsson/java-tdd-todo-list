@@ -11,6 +11,10 @@ public class TodoList {
     }
 
     public boolean add(Task task) {
+        for (Task t : this.tasks) {
+            if (t.getTaskName().equals(task.getTaskName())) return false;
+        }
+
         this.tasks.add(task);
         return true;
     }
