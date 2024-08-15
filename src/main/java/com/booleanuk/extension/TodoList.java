@@ -17,7 +17,8 @@ public class TodoList {
             System.out.println("Task already exists, not added");
         }
 
-        this.tasks.add(task);
+        Task newTask = new Task(task.getTaskName(), this.tasks.size() + 1);
+        this.tasks.add(newTask);
         System.out.println("Task added.");
         return true;
     }
@@ -90,6 +91,14 @@ public class TodoList {
         ArrayList<Task> toReturn = new ArrayList<>(this.tasks);
         Collections.sort(toReturn, new TaskAlphabetAscSort());
         Collections.reverse(toReturn);
+        return toReturn;
+    }
+
+    public Task getTaskById(int id) {
+        Task toReturn = null;
+        for (Task t : this.tasks) {
+            if (t.getId() == id) toReturn = t;
+        }
         return toReturn;
     }
 
