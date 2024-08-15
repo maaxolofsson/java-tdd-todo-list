@@ -1,6 +1,5 @@
 Assuming that:
 
-- A task's name is unique; two or more tasks cannot have the same name.
 - A task's ID is just an incrementing number. So first task will have id=1, second one will have id=2, etc.
 
 | Classes    | Methods                                  | Scenario                                         | Outputs                                  |
