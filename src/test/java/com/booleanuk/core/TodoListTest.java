@@ -65,7 +65,7 @@ class TodoListTest {
 
         tl.add(t);
 
-        Assertions.assertEquals("Do the dishes", tl.getTask(t));
+        Assertions.assertEquals("Do the dishes", tl.getTask(t).getTaskName());
     }
 
 }
