@@ -49,4 +49,8 @@ public class Task {
         this.id = id;
     }
 
+    protected void setTaskName(String newTaskName) {
+        this.taskName = newTaskName;
+    }
+
 }
