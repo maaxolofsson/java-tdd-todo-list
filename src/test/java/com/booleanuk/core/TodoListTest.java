@@ -16,9 +16,16 @@ class TodoListTest {
     }
 
     @Test
-    public void testAddTaskExists() {
+    public void testAddTaskToTodoList() {
         TodoList tl = new TodoList();
         Assertions.assertTrue(tl.add(new Task("Do the dishes")));
+    }
+
+    @Test
+    void testAddTaskToTodoListAlreadyExists() {
+        TodoList tl = new TodoList();
+        Assertions.assertTrue(tl.add(new Task("Do the dishes")));
+        Assertions.assertFalse(tl.add(new Task("Do the dishes")));
     }
 
 }
