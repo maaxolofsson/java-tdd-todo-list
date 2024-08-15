@@ -156,4 +156,37 @@ class TodoListTest {
         Assertions.assertTrue(bol);
     }
 
+    @Test
+    public void testGetTasksInAlphabeticallyDescOrder() {
+        TodoList tl = new TodoList();
+        ArrayList<Task> listSorted = new ArrayList<>();
+
+        Task t1 = new Task("Do the dishes");
+        Task t2 = new Task("Vacuum");
+        Task t3 = new Task("Go shopping");
+        Task t4 = new Task("Ask for food");
+
+        tl.add(t1);
+        tl.add(t2);
+        tl.add(t3);
+        tl.add(t4);
+        listSorted.add(t1);
+        listSorted.add(t2);
+        listSorted.add(t3);
+        listSorted.add(t4);
+        Collections.sort(listSorted, new TaskAlphabetAscSort());
+        Collections.reverse(listSorted);
+
+        ArrayList<Task> givenSorted = tl.getTasksAlphabeticallyDesc();
+        boolean bol = true;
+        for (int i = 0; i < listSorted.size(); i++) {
+            if (!givenSorted.get(i).getTaskName().equals(listSorted.get(i).getTaskName())) {
+                bol = false;
+                break;
+            }
+        }
+
+        Assertions.assertTrue(bol);
+    }
+
 }
