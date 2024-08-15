@@ -45,4 +45,8 @@ public class Task {
         return this.id;
     }
 
+    protected void setId(int id) {
+        this.id = id;
+    }
+
 }

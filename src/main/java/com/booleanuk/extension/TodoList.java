@@ -17,8 +17,8 @@ public class TodoList {
             System.out.println("Task already exists, not added");
         }
 
-        Task newTask = new Task(task.getTaskName(), this.tasks.size() + 1);
-        this.tasks.add(newTask);
+        task.setId(this.tasks.size() + 1);
+        this.tasks.add(task);
         System.out.println("Task added.");
         return true;
     }
