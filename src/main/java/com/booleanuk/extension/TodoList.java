@@ -106,6 +106,7 @@ public class TodoList {
         for (Task t : this.tasks) {
             if (t.getId() == id) {
                 t.setTaskName(newTaskName);
+                return true;
             }
         }
         return false;
