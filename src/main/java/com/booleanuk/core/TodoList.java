@@ -1,6 +1,9 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class TodoList {
 
@@ -68,6 +71,14 @@ public class TodoList {
             }
         }
         return false;
+    }
+
+    public ArrayList<Task> getTasksAlphabeticallyAsc() {
+        if (this.tasks.isEmpty()) return null;
+
+        ArrayList<Task> toReturn = new ArrayList<>(this.tasks);
+        Collections.sort(toReturn, new TaskAlphabetAscSort());
+        return toReturn;
     }
 
 }
