@@ -4,6 +4,7 @@ public class Task {
 
     private String taskName;
     private boolean status;
+    private int id;
 
     public Task(String taskName) {
         this.taskName = taskName;
@@ -13,6 +14,11 @@ public class Task {
     public Task(String taskName, boolean status) {
         this.taskName = taskName;
         this.status = status;
+    }
+
+    protected Task(String taskName, int id) {
+        this.taskName = taskName;
+        this.id = id;
     }
 
     public Task() {
@@ -33,6 +39,10 @@ public class Task {
 
     public boolean getStatus() {
         return this.status;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
 }
