@@ -15,4 +15,10 @@ class TodoListTest {
         Assertions.assertEquals("Do the dishes", t.getTaskName());
     }
 
+    @Test
+    public void testAddTaskExists() {
+        TodoList tl = new TodoList();
+        Assertions.assertFalse(tl.add(new Task("Do the dishes")), "Do the dishes");
+    }
+
 }
