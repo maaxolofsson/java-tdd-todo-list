@@ -18,7 +18,7 @@ class TodoListTest {
     @Test
     public void testAddTaskExists() {
         TodoList tl = new TodoList();
-        Assertions.assertFalse(tl.add(new Task("Do the dishes")), "Do the dishes");
+        Assertions.assertTrue(tl.add(new Task("Do the dishes")));
     }
 
 }
