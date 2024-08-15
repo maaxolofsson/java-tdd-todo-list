@@ -68,4 +68,15 @@ class TodoListTest {
         Assertions.assertEquals("Do the dishes", tl.getTask(t).getTaskName());
     }
 
+    @Test
+    public void testGetCompletedTest() {
+        TodoList tl = new TodoList();
+
+        tl.add(new Task("Do the dishes", true));
+        tl.add(new Task("Do the laundry", true));
+        tl.add(new Task("Vacuum", false));
+
+        Assertions.assertEquals(2, tl.getCompleteTasks().size());
+    }
+
 }
