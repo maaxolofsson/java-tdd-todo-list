@@ -1,5 +1,7 @@
 package com.booleanuk.extension;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,7 +19,12 @@ public class TodoList {
             System.out.println("Task already exists, not added");
         }
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+
         task.setId(this.tasks.size() + 1);
+        task.setDateAndTimeCreated(dtf.format(now));
+
         this.tasks.add(task);
         System.out.println("Task added.");
         return true;
