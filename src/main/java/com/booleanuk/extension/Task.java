@@ -5,6 +5,7 @@ public class Task {
     private String taskName;
     private boolean status;
     private int id;
+    private String created;
 
     public Task(String taskName) {
         this.taskName = taskName;
@@ -51,6 +52,14 @@ public class Task {
 
     protected void setTaskName(String newTaskName) {
         this.taskName = newTaskName;
+    }
+
+    protected void setDateAndTimeCreated(String time) {
+        this.created = time;
+    }
+
+    public String getCreated() {
+        return this.created;
     }
 
 }
