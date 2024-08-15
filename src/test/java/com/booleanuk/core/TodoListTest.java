@@ -12,7 +12,7 @@ class TodoListTest {
     @Test
     public void testCreateTask() {
         Task t = new Task("Do the dishes");
-        Assertions.assertEquals("Do the dishes", task.getTaskDescription());
+        Assertions.assertEquals("Do the dishes", t.getTaskName());
     }
 
 }
