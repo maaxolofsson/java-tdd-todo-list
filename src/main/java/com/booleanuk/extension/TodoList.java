@@ -119,4 +119,15 @@ public class TodoList {
         return false;
     }
 
+    public boolean updateTaskStatus(int id, boolean status) {
+        for (Task t : this.tasks) {
+            if (t.getId() == id) {
+                if (status) t.setComplete();
+                else t.setIncomplete();
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
