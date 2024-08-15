@@ -198,4 +198,17 @@ class TodoListTestExtension {
         Assertions.assertEquals("Vacuum", tl.getTaskById(2).getTaskName());
     }
 
+    @Test
+    public void testUpdateTaskByGivingId() {
+        TodoList tl = new TodoList();
+
+        tl.add(new Task("Do the dishes"));
+        tl.add(new Task("Vacuum"));
+
+        tl.updateTask(2, "Vacuum, again...");
+
+        Assertions.assertEquals(tl.getTaskById(1).getTaskName(), "Do the dishes");
+        Assertions.assertEquals(tl.getTaskById(2).getTaskName(), "Vacuum, again...");
+    }
+
 }
