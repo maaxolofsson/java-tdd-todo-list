@@ -4,10 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class TodoListTest {
-    @Test
-    public void exampleTest() {
-        String hello = "Hello";
-        Assertions.assertEquals("Hello", hello);
-        Assertions.assertNotEquals("Goodbye", hello);
+
+    public TodoListTest() {
+
     }
+
+    @Test
+    public void testCreateTask() {
+        Task t = new Task("Do the dishes");
+        Assertions.assertEquals("Do the dishes", task.getTaskDescription());
+    }
+
 }
