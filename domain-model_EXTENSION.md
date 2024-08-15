@@ -5,7 +5,7 @@ Assuming that:
 
 | Classes    | Methods                                     | Scenario                                         | Outputs                                  |
 |------------|---------------------------------------------|--------------------------------------------------|------------------------------------------|
-| `TodoList` | `getTaskById(String id)`                    | task with the given id exists                    | the task with the corresponding given id |
+| `TodoList` | `getTaskById(int id)`                       | task with the given id exists                    | the task with the corresponding given id |
 |            |                                             | task with the given id does not exist            | null                                     |
 |            | `updateTask(String id, String newTaskName)` | successfully updated task                        | true                                     |
 |            |                                             | task with the given id does not exit/other error | false                                    |
