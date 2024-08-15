@@ -18,6 +18,17 @@ class TodoListTest {
     }
 
     @Test
+    public void testChangeTaskStatus() {
+        Task t = new Task();
+
+        t.setComplete();
+        Assertions.assertTrue(t.getStatus());
+
+        t.setIncomplete();
+        Assertions.assertFalse(t.getStatus());
+    }
+
+    @Test
     public void testAddTaskToTodoList() {
         TodoList tl = new TodoList();
         Assertions.assertTrue(tl.add(new Task("Do the dishes")));
