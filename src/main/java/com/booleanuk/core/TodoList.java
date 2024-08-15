@@ -60,4 +60,14 @@ public class TodoList {
         return false;
     }
 
+    public boolean setTaskIncomplete(Task task) {
+        for (Task t : this.tasks) {
+            if (t.getTaskName().equals(task.getTaskName())) {
+                t.setIncomplete();
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
