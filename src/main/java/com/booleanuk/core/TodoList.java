@@ -18,4 +18,9 @@ public class TodoList {
         this.tasks.add(task);
         return true;
     }
+
+    public ArrayList<Task> getAll() {
+        return this.tasks;
+    }
+
 }
