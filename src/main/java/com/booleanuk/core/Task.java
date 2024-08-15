@@ -23,11 +23,11 @@ public class Task {
         return this.taskName;
     }
 
-    public void setComplete() {
+    protected void setComplete() {
         this.status = true;
     }
 
-    public void setIncomplete() {
+    protected void setIncomplete() {
         this.status = false;
     }
 
