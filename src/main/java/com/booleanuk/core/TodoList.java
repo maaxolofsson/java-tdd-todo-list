@@ -14,9 +14,11 @@ public class TodoList {
     public boolean add(Task task) {
         for (Task t : this.tasks) {
             if (t.getTaskName().equals(task.getTaskName())) return false;
+            System.out.println("Task already exists, not added");
         }
 
         this.tasks.add(task);
+        System.out.println("Task added.");
         return true;
     }
 
@@ -28,6 +30,7 @@ public class TodoList {
         for (Task t : this.tasks) {
             if (t.getTaskName().equals(task.getTaskName())) return t;
         }
+        System.out.println("The task '" + task.getTaskName() + "' was not found.");
         return null;
     }
 
@@ -55,6 +58,7 @@ public class TodoList {
         for (Task t : this.tasks) {
             if (t.getTaskName().equals(task.getTaskName())) {
                 t.setComplete();
+                System.out.println("Task '" + t.getTaskName() + "' set to complete.");
                 return true;
             }
         }
@@ -65,6 +69,7 @@ public class TodoList {
         for (Task t : this.tasks) {
             if (t.getTaskName().equals(task.getTaskName())) {
                 t.setIncomplete();
+                System.out.println("Task '" + t.getTaskName() + "' set to incomplete.");
                 return true;
             }
         }
