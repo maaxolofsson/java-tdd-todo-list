@@ -223,7 +223,7 @@ class TodoListTestExtension {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
         LocalDateTime now = LocalDateTime.now();
 
-        Assertions.assertEquals(tl.getTask(new Task("Do the dishes")).getCreated(), now);
+        Assertions.assertEquals(tl.getTask(new Task("Do the dishes")).getCreated(), dtf.format(now));
     }
 
 }
