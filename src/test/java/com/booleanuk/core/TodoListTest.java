@@ -86,7 +86,7 @@ class TodoListTest {
     }
 
     @Test
-    public void testGetCompletedTest() {
+    public void testGetIncompletedTest() {
         TodoList tl = new TodoList();
         tl.add(new Task("Do the dishes", true));
         tl.add(new Task("Do the laundry", true));
