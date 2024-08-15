@@ -187,4 +187,15 @@ class TodoListTestExtension {
         Assertions.assertTrue(bol);
     }
 
+    @Test
+    public void testGetTaskById() {
+        TodoList tl = new TodoList();
+
+        tl.add(new Task("Do the dishes"));
+        tl.add(new Task("Vacuum"));
+
+        Assertions.assertTrue("Do the dishes", tl.getTaskById(0).getTaskName());
+        Assertions.assertTrue("Vacuum", tl.getTaskById(1).getTaskName());
+    }
+
 }
