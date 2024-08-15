@@ -81,4 +81,13 @@ public class TodoList {
         return toReturn;
     }
 
+    public ArrayList<Task> getTasksAlphabeticallyDesc() {
+        if (this.tasks.isEmpty()) return null;
+
+        ArrayList<Task> toReturn = new ArrayList<>(this.tasks);
+        Collections.sort(toReturn, new TaskAlphabetAscSort());
+        Collections.reverse(toReturn);
+        return toReturn;
+    }
+
 }
