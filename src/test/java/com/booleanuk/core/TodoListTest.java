@@ -71,12 +71,18 @@ class TodoListTest {
     @Test
     public void testGetCompletedTest() {
         TodoList tl = new TodoList();
-
         tl.add(new Task("Do the dishes", true));
         tl.add(new Task("Do the laundry", true));
         tl.add(new Task("Vacuum", false));
 
         Assertions.assertEquals(2, tl.getCompleteTasks().size());
+
+        tl = new TodoList();
+        tl.add(new Task("Do the dishes", false));
+        tl.add(new Task("Do the laundry", false));
+        tl.add(new Task("Vacuum", false));
+
+        Assertions.assertEquals(0, tl.getCompleteTasks().size());
     }
 
 }
