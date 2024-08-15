@@ -102,4 +102,13 @@ public class TodoList {
         return toReturn;
     }
 
+    public boolean updateTask(int id, String newTaskName) {
+        for (Task t : this.tasks) {
+            if (t.getId() == id) {
+                t.setTaskName(newTaskName);
+            }
+        }
+        return false;
+    }
+
 }
