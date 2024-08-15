@@ -23,4 +23,11 @@ public class TodoList {
         return this.tasks;
     }
 
+    public Task getTask(Task task) {
+        for (Task t : this.tasks) {
+            if (t.getTaskName().equals(task.getTaskName())) return t;
+        }
+        return null;
+    }
+
 }
