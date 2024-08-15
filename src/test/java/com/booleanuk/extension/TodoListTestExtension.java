@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 class TodoListTestExtension {
 
@@ -209,6 +211,19 @@ class TodoListTestExtension {
 
         Assertions.assertEquals(tl.getTaskById(1).getTaskName(), "Do the dishes");
         Assertions.assertEquals(tl.getTaskById(2).getTaskName(), "Vacuum, again...");
+    }
+
+    @Test
+    public void testGetDateAndTimeFromCreatedTask() {
+        TodoList tl = new TodoList();
+
+        tl.add(new Task("Do the dishes"));
+        tl.add(new Task("Vacuum"));
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+
+        Assertions.assertEquals(tl.getTask(new Task("Do the dishes")).getCreated(), now);
     }
 
 }
