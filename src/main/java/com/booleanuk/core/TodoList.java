@@ -40,4 +40,14 @@ public class TodoList {
         return toReturn;
     }
 
+    public ArrayList<Task> getIncompleteTasks() {
+        ArrayList<Task> toReturn = new ArrayList<Task>();
+
+        for (Task t : this.tasks) {
+            if (!t.getStatus()) toReturn.add(t);
+        }
+
+        return toReturn;
+    }
+
 }
