@@ -112,4 +112,14 @@ class TodoListTest {
         Assertions.assertTrue(tl.getTask(new Task("Do the dishes")).getStatus());
     }
 
+    @Test
+    public void testSetTaskIncompleteInTodoList() {
+        TodoList tl = new TodoList();
+        tl.add(new Task("Do the dishes", true));
+
+        tl.setTaskIncomplete(new Task("Do the dishes"));
+
+        Assertions.assertFalse(tl.getTask(new Task("Do the dishes")).getStatus());
+    }
+
 }
