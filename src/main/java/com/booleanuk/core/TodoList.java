@@ -50,4 +50,14 @@ public class TodoList {
         return toReturn;
     }
 
+    public boolean setTaskComplete(Task task) {
+        for (Task t : this.tasks) {
+            if (t.getTaskName().equals(task.getTaskName())) {
+                t.setComplete();
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
