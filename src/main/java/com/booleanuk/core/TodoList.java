@@ -30,4 +30,14 @@ public class TodoList {
         return null;
     }
 
+    public ArrayList<Task> getCompleteTasks() {
+        ArrayList<Task> toReturn = new ArrayList<Task>();
+
+        for (Task t : this.tasks) {
+            if (t.getStatus()) toReturn.add(t);
+        }
+
+        return toReturn;
+    }
+
 }

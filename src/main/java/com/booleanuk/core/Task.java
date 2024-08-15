@@ -10,6 +10,11 @@ public class Task {
         this.status = false; // Setting to false, i.e. incomplete from beginning
     }
 
+    public Task(String taskName, boolean status) {
+        this.taskName = taskName;
+        this.status = status;
+    }
+
     public Task() {
 
     }
